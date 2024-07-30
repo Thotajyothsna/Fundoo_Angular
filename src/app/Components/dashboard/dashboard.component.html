@@ -1,0 +1,76 @@
+<mat-toolbar class="nav">
+
+        
+            <button style="color: black;" (click)="sidenav.toggle();" mat-icon-button title="Main menu">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <span>Keep</span>
+        
+        <div class="search-container">
+            <button class="header-btn-menu" mat-icon-button aria-label="menu">
+                <img src=".\assets\Images\Search.svg" alt="search">
+              
+            </button>
+            <input
+              type="text"
+              placeholder="Search"
+              />
+          </div>
+          <span></span>
+        <div>
+            <button mat-icon-button title="Refresh">
+                <img src=".\assets\Images\Refresh.svg">
+
+            </button>
+            <button mat-icon-button title="List view">
+                <img src=".\assets\Images\ViewList.svg" alt="list view">
+            </button>
+            <button mat-icon-button title="Settings">
+                <img src=".\assets\Images\Settings.svg" alt="settings">
+            </button>
+            <button mat-icon-button title="Google apps">
+                <img src=".\assets\Images\Apps.svg" alt="apps">
+            </button>
+            <button mat-icon-button title="Google account">
+                <img src=".\assets\Images\Account_Circle.svg" alt="account">
+            </button>
+        </div>
+    
+</mat-toolbar>
+<mat-sidenav-container>
+    <mat-sidenav #sidenav opened="false" mode="side">
+        <mat-nav-list style="width: 250px;">
+            <a mat-list-item routerLink="/dashboard/notes">
+                <div class="sideitems">
+                    <p>Notes</p>
+                </div>
+            </a>
+            <a mat-list-item>
+                <div class="sideitems">
+                    <p>Reminders</p>
+                </div>
+            </a>
+            <a mat-list-item>
+                <div class="sideitems">
+                    <p>Edit labels</p>
+                </div>
+            </a>
+            <a mat-list-item routerLink="/dashboard/Archive">
+                <div class="sideitems">
+                    <p>Archive</p>
+                </div>
+            </a>
+            <a mat-list-item routerLink="/dashboard/Trash">
+                <div class="sideitems">
+                    <p>Trash</p>
+                </div>
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div style="height: 90vh">
+            <router-outlet>
+            </router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
